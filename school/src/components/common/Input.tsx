@@ -1,0 +1,15 @@
+import type { FC, InputHTMLAttributes } from "react";
+import { twMerge } from "tailwind-merge";
+
+const Input: FC<InputHTMLAttributes<HTMLInputElement>> = ({className, ...rest}) => {
+    const baseClasses =
+    "px-3 py-2 bg-white border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed text-sm transition duration-150 w-full";
+    return (
+        <input
+            className={twMerge(`${baseClasses} ${className}`)}
+            {...rest}
+        />
+    );
+};
+
+export default Input;
