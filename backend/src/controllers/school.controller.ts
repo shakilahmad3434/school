@@ -124,7 +124,7 @@ export const generateRefreshToken = async (req: SessionInterface, res: Response)
     }
 }
 
-export const logout = async (req: Request, res: Response) => {
+export const logout = async (_req: Request, res: Response) => {
     try {
         const options = {
         httpOnly: true,

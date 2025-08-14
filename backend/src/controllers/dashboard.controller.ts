@@ -1,10 +1,9 @@
 import { Request, Response } from "express";
-import { CatchError, TryError } from "../utils/error";
+import { CatchError } from "../utils/error";
 import StudentModel from "../models/student.model";
 import TeacherModel from "../models/teacher.model";
 import PaymentModel from "../models/payment.model";
 import ClassModel from "../models/class.model";
-import SchoolModel from "../models/school.model";
 
 export const dashboard = async (req: Request, res: Response) => {
     try {
