@@ -1,14 +1,15 @@
 {
   "name": "school-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "School management API",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "keywords": [],
-  "author": "Shakil ahmad",
+  "author": "Shakil Ahmad",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
@@ -23,7 +24,8 @@
     "@types/swagger-ui-express": "^4.1.8",
     "swagger-autogen": "^2.23.7",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "nodemon": "^3.1.10"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.820.0",
@@ -36,7 +38,6 @@
     "jsonwebtoken": "^9.0.2",
     "moment": "^2.30.1",
     "mongoose": "^8.15.0",
-    "nodemon": "^3.1.10",
     "shortid": "^2.2.17",
     "swagger-jsdoc": "^6.2.8",
     "swagger-model-validator": "^3.0.21",
