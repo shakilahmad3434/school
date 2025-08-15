@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { CookieOptions, Request, Response } from "express";
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import { v4 as uuid } from "uuid";
@@ -21,11 +21,12 @@ const getToken = async (payload: PayloadInterface) => {
     return {accessToken, refreshToken}
 }
 
-const getOptions = (tokenType: TokenType) => {
+const getOptions = (tokenType: TokenType): CookieOptions => {
     return {
         maxAge: tokenType === "at" ? accessTokenTimeInMs : refreshTokenTimeInMs,
-        secure: false,
-        domain: "localhost",
+        secure: process.env.NODE_ENV === "production",
+        domain: process.env.DOMAIN,
+        sameSite: 'none',
         httpOnly: true
     }
 }

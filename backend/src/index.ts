@@ -6,7 +6,7 @@ mongoose.connect(process.env.DB!)
   .then(() => console.log("MongoDB connected"))
   .catch(err => {
     console.error("MongoDB connection error:", err);
-    process.exit(1); // Exit process if DB fails
+    process.exit(1);
   });
 
 import express from 'express';
