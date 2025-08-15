@@ -25,7 +25,6 @@ const getOptions = (tokenType: TokenType): CookieOptions => {
     return {
         maxAge: tokenType === "at" ? accessTokenTimeInMs : refreshTokenTimeInMs,
         secure: process.env.NODE_ENV === "production",
-        domain: process.env.DOMAIN,
         sameSite: 'none',
         httpOnly: true
     }
